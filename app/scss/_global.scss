@@ -6,9 +6,9 @@ html {
 body {
   background-color: #F9FAFF;
   color: $defaul;
-  @extend %rubik-400;
-  font-size: 18px;
-  line-height: 130%;
+  @extend %os600;
+  font-size: 16px;
+  line-height: 140%;
   display: flex;
   flex-direction: column;
 }
@@ -18,7 +18,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 15px;
 }

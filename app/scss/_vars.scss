@@ -1,12 +1,64 @@
-$accent: #FF6838;
-$text: #363853;
-$defaul: #31352B;
-$white: #ffffff;
-$focus: #FF7A50;
+$accent: #63A60E;
+$bg: #F5F5F5;
+$defaul: #121212;
 
 
-%rubik-400 {
-  font-family: 'Rubik-Regular', sans-serif;
+%os300 {
+  font-family: 'OpenSans-Light', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+%os400 {
+  font-family: 'OpenSans-Regular', sans-serif;
   font-weight: 400;
+  font-style: normal;
+}
+
+%os600 {
+  font-family: 'OpenSans-SemiBold', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+%os800 {
+  font-family: 'OpenSans-Bold', sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+%roboto400 {
+  font-family: 'Roboto-Regular', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+%roboto500 {
+  font-family: 'Roboto-Medium', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+%ruda400 {
+  font-family: 'Ruda-Regular', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+%ruda600 {
+  font-family: 'Ruda-SemiBold', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+%ruda700 {
+  font-family: 'Ruda-Bold', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+%ruda900 {
+  font-family: 'Ruda-Black', sans-serif;
+  font-weight: 900;
   font-style: normal;
 }

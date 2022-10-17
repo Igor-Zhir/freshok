@@ -6,6 +6,72 @@
 @import 'media';
 
 
-body {
-  display: flex;
+
+.header-top {
+  background-color: #31352B;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+  }
+
+  &__list {
+    display: inline;
+    &:not(:last-child) {
+      padding-right: 48px;
+    }
+  }
+
+  &__link {
+    color: #fff;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 0;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+  &__link-adress {
+    padding-left: 44px;
+    &::before {
+      background-image: url('../images/icons/icon-del-address.svg');
+      width: 32px;
+      height: 22px;
+    }
+  }
+
+    &__link-callback {
+      padding-left: 35px;
+      &::before {
+        background-image: url('../images/icons/icon-tel.svg');
+        width: 22px;
+        height: 22px;
+      }
+    }
+ 
+  
+  &__nav-list {
+    display: inline;
+    &:not(:last-child) {
+      padding-right: 54px;
+    }
+  }
+
+  &__nav-link {
+    color: #fff;
+  }
+
+
+
 }
