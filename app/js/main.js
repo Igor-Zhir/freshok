@@ -13,6 +13,20 @@ $(function() {
 $('.header-slider').slick({
   arrows: true,
   autoplaySpeed: 2000,
+  dots: false,
+  infinite: false,
+
+  // Добавляем точки при расширении экрана 1530 и убираем стрелки
+  responsive: [
+    {
+      breakpoint: 1530,
+      settings: {  
+        dots: true,
+        arrows: false,
+      }
+    }
+  ]
+
 });
   
 

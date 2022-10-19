@@ -176,6 +176,10 @@
       margin-left: -1px;
       color: $accent;
     }
+    &:active {
+      border-left: none;
+      margin-left: 2px;
+    }
   }
 
   &__list-link {
@@ -190,6 +194,14 @@
     &:hover {
       margin-left: -2px;
       color: $accent;
+    }
+    &:focus {
+      box-shadow: 0px 0px 0px 3px #E0EDCF;
+      outline: transparent;
+    }
+    &:active {
+      box-shadow: none;
+      color: #C1C1C1;
     }
   }
 }
@@ -215,6 +227,7 @@
     padding: 14px 172px 14px 51px;
     box-shadow: 0px 0px 0px 4px rgba(99, 166, 14, 0.2);
     border-radius: 6px 0 0 6px;
+    outline: transparent;
     &::placeholder {
       @extend %os400;
       font-size: 14px;
@@ -222,6 +235,7 @@
       letter-spacing: 0.03em;
       color: #31352B;
     }
+
   }
   &__btn {
     background-color: #31352B;
@@ -230,6 +244,14 @@
     border-radius: 0 6px 6px 0;
     font-size: 14px;
     letter-spacing: 0.03em;
+    transition: all 0.4s;
+    &:hover {
+      background-color: rgba(49, 53, 43, 0.85);
+    }
+    &:active {
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      color: rgba(255, 255, 255, 0.5);
+    }
   }
 }
 
@@ -257,7 +279,6 @@
 
 .header-slider {
   position: relative;
-  margin-bottom: -24px;
   &__item {
     background-position: center;
     background-repeat: no-repeat;
@@ -313,6 +334,18 @@
     @extend %os400;
     letter-spacing: 0.03em;
     color: #fff;
+    transition: all 0.4s;
+    &:hover {
+      background-color: #4D810C;
+    }
+    &:focus {
+      box-shadow: 0px 0px 0px 4px #E0EDCF;
+      outline: transparent;
+    }
+    &:active {
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      color: rgba(255, 255, 255, 0.5);
+    }
   }
 
   // Скрываем нижний скролл на слайде !ВАЖНО!
@@ -329,25 +362,248 @@
   .slick-arrow {
     position: absolute;
     top: 45%;
-    z-index: 20;
     font-size: 0;
     width: 60px;
     height: 60px;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 6px;
+    z-index: 10;
+    background-repeat: no-repeat;
+    background-position: center;
+    &:focus {
+      box-shadow: 0px 0px 0px 3px rgba(99, 166, 14, 0.5);
+      border-radius: 6px;
+      outline: transparent;
+    }
+    &:hover {
+      background-color: #E0EDCF;
+    }
+    &:active {
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: none;
+    }
   }
+
+  // Стили для стрелок когда слайд заканчивается
+  // .slick-arrow.slick-disabled {
+
+  // }
+
   // Стрелка слева
   .slick-arrow.slick-prev {
     left: 3%;
-    background-image: url('..//images/header-slider/arrow-prev.png');
+    background-image: url('..//images/header-slider/arrow-prev.svg');
+    &.slick-disabled {
+      background-image: url('..//images/header-slider/arrow-prev-disabled.svg');
+    }
+    &:hover {
+      background-image: url('..//images/header-slider/arrow-prev-hover.svg');
+    }
+    &:active {
+      background-image: url('..//images/header-slider/arrow-prev-hover.svg');
+    }
   }
   // Стрелка справа
   .slick-arrow.slick-next {
     right: 3%;
-    background-image: url('..//images/header-slider/arrow-next.png');
+    background-image: url('..//images/header-slider/arrow-next.svg');
+    &.slick-disabled {
+      background-image: url('..//images/header-slider/arrow-prev-disabled.svg');
+      transform: rotate(180deg);
+    }
+    &:hover {
+      background-image: url('..//images/header-slider/arrow-prev-hover.svg');
+      transform: rotate(180deg);
+    }
+    &:active {
+      background-image: url('..//images/header-slider/arrow-prev-hover.svg');
+      transform: rotate(180deg);
+    }
   }
+
+      // Точки. Выравнивание точек
+      .slick-dots{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 40px;
+        right: 50%;
+     }
+   
+     // Убираем стандарные стили для точек которые лишки
+     .slick-dots li{
+       list-style: none;
+       margin: 0 6px;
+     }
+   
+     // Меняем цвет, размер, бордер точкам
+     .slick-dots li button{
+       font-size: 0;
+       width: 20px;
+       height: 20px;
+       background-color: #FFFFFF;
+       border: 1px solid #C1C1C1;
+       border-radius: 50%;
+     }
+   
+     // Меняем цвет в активных точках
+     .slick-dots li.slick-active button {
+       background-color: $accent;
+       border: none;
+     }
 }
-.asd{
-  width: 100%;
-  height: 100%;
-  background-color: red;
+
+.footer {
+  background-color: #31352B;
+  padding: 30px 0;
+
+  &__logo-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    outline: transparent;
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.0001);
+      box-shadow: 0px 0px 0px 3px #EFF6E7;
+      border-radius: 3px;
+      outline: transparent;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  &__content *{
+    outline: transparent;
+    &:focus {
+      box-shadow: 0px 0px 0px 3px #EFF6E7;
+      border-radius: 3px;
+      outline: transparent;
+    }
+  }
+  &__nav-social {
+    display: flex;
+    margin-left: -6px;
+  }
+  &__subscribe-text {
+    font-size: 14px;
+    line-height: 100%;
+    color: #fff;
+    @extend %os400;
+    margin-bottom: 18px;
+  }
+  &__form-input {
+    width: 180px;
+    min-height: 40px;
+    padding-left: 12px;
+    border-radius: 6px 0px 0px 6px;
+    &::placeholder {
+      @extend %os400;
+      font-size: 14px;
+      line-height: 100%;
+      color: #4F4F4F;
+    }
+  }
+  &__form-btn {
+    @extend %os600;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    border-radius: 0px 6px 6px 0px;
+    padding: 0 17px;
+    background-color: #63A60E;
+    height: 40px;
+    color: #fff;
+    margin-left: -4px;
+    transition: all 0.4s;
+    &:hover {
+      background-color: #4D810C;
+    }
+    &:focus {
+      box-shadow: 0px 0px 0px 4px #E0EDCF;
+      outline: transparent;
+    }
+    &:active {
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+  &__nav-list {
+    &:not(:last-child) {
+      padding-bottom: 18px;
+    }
+  }
+  &__nav-link {
+    @extend %os400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #fff;
+    transition: all 0.4s;
+    &:hover {
+      opacity: 0.7;
+    }
+    &:active {
+      color: #E0EDCF;
+      box-shadow: none;
+      border-radius: none;
+    }
+  }
+  &__nav-adress {
+    @extend %os400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #fff;
+  }
+  &__nav-link-text {
+    @extend %os400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #fff;
+  }
+  &__nav-list-social {
+    padding: 3px 6px;
+  }
+  &__nav-link-social {
+    display: flex;
+    align-items: center;
+    transition: all 0.4s;
+    &:hover {
+      opacity: 0.7;
+    }
+    &:active {
+      path {
+        fill: #E0EDCF;
+      }
+      box-shadow: none;
+    }
+  }
+  &__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  &__bottom-copyright {
+    font-size: 14px;
+    line-height: 140%;
+    color: #FFFFFF;
+    @extend %os400;
+  }
+  &__bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28px;
+  }
+  &__bottom-cards {
+    display: flex;
+  }
+  &__bottom-card {
+    &:not(:last-child) {
+      padding-right: 24px;
+    }
+  }
+
+
 }
+
+
