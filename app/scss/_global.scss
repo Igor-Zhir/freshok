@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  background-color: #F9FAFF;
+  background-color: #fff;
   color: $defaul;
   @extend %os600;
   font-size: 16px;
@@ -21,6 +21,14 @@ body {
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 140%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  @extend %ruda600;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
