@@ -849,6 +849,17 @@
     border: 1px solid #63A60E;
     border-radius: 6px;
     margin: 18px auto 0 auto;
+    transition: all 0.4s;
+    &:hover {
+      background-color: #EFF6E7;
+    }
+    &:focus {
+      box-shadow: 0px 0px 0px 4px rgba(99, 166, 14, 0.5);
+      border-radius: 6px;
+    }
+    &:active {
+      box-shadow: inset 0px 10px 4px rgba(0, 0, 0, 0.1);
+    }
   }
 }
 
@@ -981,6 +992,10 @@
     border: 1px solid #C1C1C1;
     border-radius: 6px;
     position: relative;
+    transition: all 0.4s;
+    &:hover {
+      border: 1px solid #63A60E;
+    }
   }
   &__badge-new,
   &__badge-hit {
@@ -1066,6 +1081,29 @@
     color: #505050;
     line-height: 100%;
     padding-right: 18px;
+  }
+  &__btn {
+    margin-top: 18px;
+    background-color: $accent;
+    border-radius: 6px;
+    padding: 12px 24px;
+    @extend %os400;
+    font-size: 18px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    transition: all 0.3s;
+    &:hover {
+      background-color: #4D810C;
+    }
+    &:focus {
+      box-shadow: 0px 0px 0px 4px #E0EDCF;
+      outline: transparent;
+    }
+    &:active {
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      color: rgba(255, 255, 255, 0.5);
+    }
   }
 
 }
