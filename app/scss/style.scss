@@ -551,7 +551,7 @@
       border-radius: none;
     }
   }
-  &__nav-adress {
+  &__nav-adress-link {
     @extend %os400;
     font-size: 14px;
     line-height: 140%;
@@ -684,11 +684,10 @@
 }
 
 .product-catalog {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 30px;
-  margin-bottom: 72px;
+  margin-bottom: 48px;
   & *{
     outline: transparent;
     &:focus {
@@ -700,8 +699,9 @@
   &__box {
     display: flex;
     flex-direction: column;
-    width: 300px;
-    height: 409px;
+    max-width: 300px;
+    min-height: 409px;
+
     background-color: #fff;
     border: 1px solid rgba(17, 17, 17, 0.2);
     border-radius: 6px;
@@ -865,6 +865,7 @@
 
 .product-promo {
   &__inner {
+    padding-top: 72px;
     display: flex;
     gap: 30px;
   }
@@ -966,6 +967,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+  padding-bottom: 48px;
   &__badge-new,
   &__badge-hit {
     border-radius: 6px;
@@ -1083,7 +1085,7 @@
     padding-right: 18px;
   }
   &__btn {
-    margin-top: 18px;
+    display: block;
     background-color: $accent;
     border-radius: 6px;
     padding: 12px 24px;
@@ -1093,6 +1095,7 @@
     letter-spacing: 0.03em;
     color: #FFFFFF;
     transition: all 0.3s;
+    margin: 0 auto;
     &:hover {
       background-color: #4D810C;
     }
@@ -1112,8 +1115,20 @@
   &__brand {
     display: flex;
     justify-content: space-around;
-    opacity: 0.5;
+    flex-wrap: wrap;
+    gap: 30px;
     padding-bottom: 72px;
+  }
+  &__brand-img {
+    width: 80px;
+    height: 59px;
+    opacity: 0.5;
+    transition: opacity 0.4s 0s;
+    object-fit: contain;
+    object-position: center;
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 .our-news {
@@ -1129,32 +1144,80 @@
     line-height: 130%;
     color: #63A60E;
     border-bottom: 2px solid $accent;
+    transition: all 0.4s;
+    &:hover {
+      color: #4D800C;
+    }
+    &:focus {
+      outline: transparent;
+      background: rgba(255, 255, 255, 0.0001);
+      box-shadow: 0px 0px 0px 3px #E0EDCF;
+      border-radius: 3px;
+      border-bottom: 2px solid transparent;
+    }
+    &:active {
+      border-bottom: 2px solid #E0EDCF;
+      background: none;
+      box-shadow: none;
+      border-radius: 0;
+    }
   }
   &__inner {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
   }
   &__item {
-    width: 33.3%;
-    }
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+  }
+  &__date-wrap {
+    min-height: 240px;
+    border-radius: 6px 6px 0 0;
+  }
+  &__date-wrap--fruit {
+    background: url(../images/news/bg/strawberry.jpg) center/cover no-repeat; 
+  }
+  &__date-wrap--mango {
+    background: url(../images/news/bg/mango.jpg) center/cover no-repeat; 
+  }
+  &__date-wrap--papaya {
+    background: url(../images/news/bg/papaya.jpg) center/cover no-repeat; 
+  }
   &__date {
-    height: 240px;
+    display: inline-block;
+    text-align: center;
     padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
   }
   &__month {
-    display: inline-block;
-    padding-top: 18px;
+    padding: 18px 15px 4px 15px;
+    background-color: #fff;
+    @extend %os800;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: #121212;
+    line-height: 14px;
   }
   &__day {
-    display: inline-block;
-  }
-
-  &__date--fruits {
-    background: url(../images/news/bg/strawberry.jpg) center/cover no-repeat; 
+    padding: 0 15px 10px 15px;
     background-color: #fff;
+    border-radius: 0px 0px 4px 4px;
+    font-size: 30px;
+    line-height: 30px;
+    color: #121212;
+    @extend %ruda600;
+  }
+  &__text {
+    min-height: 108px;
+    padding: 18px;
+    font-size: 16px;
+    line-height: 150%;
+    color: #121212;
+    transition: color 0.3s 0s;
+    &:hover {
+      color: #63A60E;
+    }
   }
 }
 
