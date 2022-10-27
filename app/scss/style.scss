@@ -1095,6 +1095,10 @@
   }
 }
 
+.product-catalog__item {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .product-promo {
   &__inner {
     padding-top: 72px;
@@ -1454,7 +1458,7 @@
 }
 
 .catalog {
-  padding: 48px 0 72px 0;
+  padding: 48px 0 72px 0;  
   &__title {
     padding-bottom: 48px;
     @extend %ruda700;
@@ -1463,13 +1467,17 @@
     letter-spacing: 0.03em;
     color: #121212;
   }
+  &__inner {
+    display: flex;
+    column-gap: 30px;
+  }
 }
 
 .filters {
   display: flex;
   flex-direction: column;
   row-gap: 30px;
-  width: 300px;
+  min-width: 300px;
   // .filters__item
 
   &__box {
@@ -1651,6 +1659,84 @@
     }
     &::after {
       right: 0;
+    }
+  }
+}
+
+.catalog-product {
+  width: 100%;
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    line-height: 0;
+  }
+  &__btn-more {
+    padding: 12px 24px;
+    background-color: #63A60E;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 18px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    @extend %os400;
+  }
+}
+.filter-product {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 15px;
+  margin-bottom: 48px;
+  &__select-sort {
+    outline: transparent;
+    padding: 9px 16px 15px 11px;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    color: #505050;
+    border: 1px solid #C1C1C1;
+    border-radius: 3px;
+  }
+  &__select-sort-num {
+    padding: 9px 26px 15px 11px;
+  }
+  &__filter-btn {
+    width: 47px;
+    height: 47px;
+    background-color: #F6F6F6;
+    border-radius: 3px;
+    line-height: 0;
+  }
+  &__filter-btn--active {
+    path {
+      fill: #63A60E;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background-color: #F6F6F6;
+    border-radius: 3px;
+    &:not(:last-child) {
+      margin-right: 6px;
+    }
+  }
+  &__link {
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    color: #505050;
+    @extend %os400;
+  }
+  &__link-btn--disable {
+    path {
+      fill: #C1C1C1;
     }
   }
 }
