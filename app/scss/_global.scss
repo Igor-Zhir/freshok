@@ -13,6 +13,19 @@ body {
   flex-direction: column;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .main {
   flex-grow: 1;
 }
@@ -29,6 +42,38 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   @extend %ruda600;
+}
+
+.breadcrumbs {
+  background-color: #F6F6F6;
+  &__list {
+    padding: 24px 15px 24px 0;
+  }
+  &__item {
+    display: inline-block;
+    position: relative;
+    &:not(:last-child) {
+      padding-right: 16px;
+    }
+    &:not(:last-child) {
+      &::after {
+        content: '';
+        position: absolute;
+        background-image: url('..//images/icons/breadcrumbs-arrow.svg');
+        width: 6px;
+        height: 10px;
+        top: 6px;
+        right: 2px;
+      }
+    }
+  }
+  &__item-link {
+    @extend %os400;
+    font-size: 14px;
+    line-height: 120%;    
+    letter-spacing: 0.03em;
+    color: #505050;
+  }
 }
 
 input[type="number"]::-webkit-outer-spin-button,
