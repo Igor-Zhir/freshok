@@ -972,6 +972,7 @@
     background-color: #FF7A00;
   }
   &__like {
+    margin-left: auto;
     margin-top: 5px;
     z-index: 2;
     &:hover {
@@ -1631,36 +1632,42 @@
     color: #505050;
   }
   &__sliders {
+    margin-bottom: 26px;
+  }
+  &__item--price {
+    padding: 18px 0 25px 0;
+  }
+  &__inner {
     padding: 0 18px;
   }
-  &__sliders-line-bg {
-    width: 100%;
-    height: 2px;
+  .noUi-target {
     background-color: #C4C4C4;
-    margin-bottom: 30px;
-  }
-  &__sliders-line-after {
-    background-color: #63A60E;
-    width: 100%;
+    border-radius: none;
+    border: none;
+    box-shadow: none;
     height: 2px;
-    position: relative;
-    &::before,
-    &::after {
-      position: absolute;
-      content: '';
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background-color: $accent;
-      top: -8px;
-    }
-    &::before {
-      left: 0;
-    }
-    &::after {
-      right: 0;
-    }
   }
+  .noUi-connect {
+    background-color: $accent;
+  }
+  .noUi-horizontal .noUi-handle {
+    background-color: $accent;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    right: -10px;
+    top: -8px;
+}
+.noUi-handle {
+  border: none;
+  border-radius: none;
+  background: none;
+  cursor: default;
+  box-shadow: none;
+}
+.noUi-handle:after, .noUi-handle:before {
+  display: none;
+}
 }
 
 .catalog-product {

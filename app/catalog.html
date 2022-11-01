@@ -494,24 +494,23 @@
                 </h3>
                 <button class="filters__btn-turn"></button>
               </div>
-              <form class="filters__inputs filters__item filters__item--active" action="#">
+              <div class="filters__inner">
+              <form class="filters__inputs filters__item filters__item--active filters__item--price" action="#">
                 <div class="filters__inputs-item">
                   <span class="filters__inputs-text">от</span>
-                  <input class="filters__inputs-input" type="number" value="100">
+                  <input class="filters__inputs-input" type="number" value="100" min="100" max="1000" id="input-0">
                   <span class="filters__inputs-symbol">₴</span>
                 </div>
                 <div class="filters__inputs-item">
                   <span class="filters__inputs-text">до</span>
-                  <input class="filters__inputs-input" type="number" value="1000">
+                  <input class="filters__inputs-input" type="number" value="100" min="100" max="1000" id="input-1">
                   <span class="filters__inputs-symbol">₴</span>
                 </div>
               </form>
-              <div class="filters__sliders">
-                <div class="filters__sliders-line-bg">
-                  <div class="filters__sliders-line-after"></div>
-                </div>
+              <div class="filters__sliders" id="range-slider">
               </div>
             </div>
+          </div>
           </aside>
           <div class="catalog-product">
             <div class="catalog-product__filter filter-product">
